@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Session auht</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      .container {
+        max-width: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <form action="/login" method="post">
+        <h4>SIGN IN</h4>
+        <p>Massukan username dan password anda</p>
+        <hr />
+
+        {{ if .error }}
+        <div class="alert alert-danger">{{ .error }}</div>
+        {{ end }}
+
+        <div class="form-group mb-3">
+          <label>Username</label>
+          <input
+            type="text"
+            name="username"
+            class="form-control"
+            autocomplete="off"
+          />
+        </div>
+        <div class="form-group mb-3">
+          <label>Passwrod</label>
+          <input
+            type="password"
+            name="password"
+            class="form-control"
+            autocomplete="new-password"
+          />
+        </div>
+
+        <button type="submit" class="btn btn-success mt-3 w-100">
+          SIGN IN
+        </button>
+        <hr />
+        <div class="text-center">
+          <p>Belum punya akun? <a href="/register">Mendaftar</a></p>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
